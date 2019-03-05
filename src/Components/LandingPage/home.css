@@ -1,0 +1,50 @@
+#LandingPage {
+  background-color: ;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: repeat(4,minmax(10px, auto));
+}
+
+.header {
+  grid-row: 1/2;
+  grid-column: 1/5;
+  background: #5671A9;
+  padding: 1em;
+
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.header-title {
+  grid-column: 1/2;
+  background: ;
+  width: 100%;
+  background: ;
+  margin: auto;
+  color: white;
+  float: left;
+  /* margin-left: 1em; */
+}
+
+nav {
+  grid-column: 4/5;
+  width: ;
+  margin: auto;
+  /* padding: 3em; */
+  /* margin-left: -1em; */
+  background: ;
+  height: 100%;
+}
+
+nav a {
+  /* margin-left: 5em; */
+  text-decoration: none;
+  float: right;
+  color: white;
+  padding-left: 2em;
+}
+
+.PublicPosts {
+  grid-row: 2/3;
+  grid-column: 1/5;
+}

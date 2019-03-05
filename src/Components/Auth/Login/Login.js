@@ -26,7 +26,7 @@ class Login extends Component{
       console.log(parsedResponse, ' this is parsedResponse')
 
       if(parsedResponse.data === 'login successful'){
-        this.props.history.push('/');
+        this.props.history.push('/profile');
       }else if(parsedResponse.data === 'password wrong'){
         alert('Password Incorrect')
       }else if(parsedResponse.data === 'username not found'){
@@ -46,9 +46,12 @@ class Login extends Component{
   render(){
     return(
       <div>
-        <nav>
-          <a href="/">Home</a>
-        </nav>
+        <div className="header">
+          <h1 className="header-title">Freecycle</h1>
+          <nav>
+            <a href="/">Home</a>
+          </nav>
+        </div>
 
         <h1>Login</h1>
         <Form getUser={this.getUser} handleChange={this.handleChange}/>

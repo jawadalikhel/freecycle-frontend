@@ -3,6 +3,9 @@ import Form from './Form';
 
 class Register extends React.Component{
   state = {
+    picture: '',
+    about: '',
+    location: '',
     email: '',
     username: '',
     password: '',
@@ -42,9 +45,12 @@ class Register extends React.Component{
   render(){
     return(
       <div>
-        <nav>
-          <a href="/">Home</a>
-        </nav>
+        <div className="header">
+          <h1 className="header-title">Freecycle</h1>
+          <nav>
+            <a href="/">Home</a>
+          </nav>
+        </div>
 
         <h1>Register</h1>
         <Form handleSubmit={this.handleSubmit} handlechange={this.handlechange}/>

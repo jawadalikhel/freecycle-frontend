@@ -6,7 +6,7 @@ const Login = (props) =>{
       <form onSubmit={props.getUser}>
         <input type="text" onChange={props.handleChange} name='username' placeholder="username" /><br/>
         <input type="password" onChange={props.handleChange} name='password' placeholder="password" /><br/>
-        <button>Login</button>
+        <button style={{'backgroundColor':'#6a84b7','color':'white'}}>Login</button>
       </form>
     </div>
   )
