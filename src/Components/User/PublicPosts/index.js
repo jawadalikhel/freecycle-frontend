@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Display from './Display';
-import './style.css';
+import Nav from '../Nav';
 
 class Posts extends Component{
   constructor(){
@@ -40,7 +40,14 @@ class Posts extends Component{
   render(){
     // console.log(this.state.posts,'POSTS')
     return(
-      <div id="display-container">
+      <div>
+        <Nav />
+
+        <div id="in-nav">
+          <a href="/profile">Your Posts</a>
+          <a href="/gposts" >Public Posts</a>
+        </div>
+
         <Display data={this.state.posts} />
       </div>
     )

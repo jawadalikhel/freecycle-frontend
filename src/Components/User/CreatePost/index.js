@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import Nav from '../Nav';
+import './style.css';
 
 class CreatePost extends Component{
   constructor(){
@@ -7,7 +9,9 @@ class CreatePost extends Component{
       title: '',
       picture: '',
       description: '',
-      location: ''
+      price: '',
+      location: '',
+      redirect: true,
     }
   }
 
@@ -25,6 +29,13 @@ class CreatePost extends Component{
 
       const parsedJSON = await parsedResponse.json();
 
+      if(parsedJSON.created != 'post created successful'){
+        console.log('post not created')
+      }else {
+        this.history.push('/profile')
+        console.log('your post got created')
+      }
+
       console.log(parsedJSON, ' this is the new post')
     } catch (err) {
       console.log(err, 'error in CreatePost')
@@ -39,21 +50,14 @@ class CreatePost extends Component{
   render(){
     return(
       <div>
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/">Logout</a>
-            <a href="/createpost">New Post</a>
-            <a href="#">Settings</a>
-            <a href="/profile">Home</a>
-          </nav>
-        </div>
+        <Nav />
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} id="post-form">
           <h3>Create Post</h3>
           <input type="text" onChange={this.handleChange} name="title" placeholder="Title of post.."/><br/>
           <input type="text" onChange={this.handleChange} name="picture" placeholder="Picture of post.."/><br/>
           <input type="text" onChange={this.handleChange} name="description" placeholder="Description of post.."/><br/>
+          <input type="text" onChange={this.handleChange} name="price" placeholder="Price of item.."/><br/>
           <input type="text" onChange={this.handleChange} name="location" placeholder="Location..."/><br/>
           <button>Post</button>
         </form>

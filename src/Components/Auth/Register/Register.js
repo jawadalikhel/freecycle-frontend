@@ -1,5 +1,7 @@
 import React from 'react';
 import Form from './Form';
+import Nav from '../../PublicNav';
+
 
 class Register extends React.Component{
   state = {
@@ -28,7 +30,7 @@ class Register extends React.Component{
       console.log(parsedResponse, ' this is register response');
 
       if(parsedResponse.data === 'register successful'){
-        this.props.history.push('/')
+        this.props.history.push('/login')
       }else{
         alert('register error');
       }
@@ -45,12 +47,7 @@ class Register extends React.Component{
   render(){
     return(
       <div>
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/">Home</a>
-          </nav>
-        </div>
+        <Nav />
 
         <h1>Register</h1>
         <Form handleSubmit={this.handleSubmit} handlechange={this.handlechange}/>

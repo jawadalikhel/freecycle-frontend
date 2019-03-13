@@ -1,0 +1,15 @@
+#profile-container {
+  background: ;
+
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 2em;
+}
+
+#profile-container p, #profile-container img {
+  background: ;
+  margin: auto;
+
+  grid-column: 2/4;
+  font-size: 2em;
+}

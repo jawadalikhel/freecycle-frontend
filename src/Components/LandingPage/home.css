@@ -1,15 +1,15 @@
-#LandingPage {
+/* #LandingPage {
   background-color: ;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: repeat(4,minmax(10px, auto));
+  grid-template-rows: repeat(3,minmax(10px, auto));
 }
 
-.header {
-  grid-row: 1/2;
+#header-container  {
   grid-column: 1/5;
+  grid-row: 1/2;
   background: #5671A9;
-  padding: 1em;
+  height: 5em;
 
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -17,34 +17,44 @@
 
 .header-title {
   grid-column: 1/2;
-  background: ;
-  width: 100%;
-  background: ;
   margin: auto;
+  margin-left: 5%;
   color: white;
-  float: left;
-  /* margin-left: 1em; */
 }
 
-nav {
-  grid-column: 4/5;
-  width: ;
-  margin: auto;
-  /* padding: 3em; */
-  /* margin-left: -1em; */
+.nav {
+  grid-column: 4/6;
   background: ;
-  height: 100%;
+  margin: auto;
 }
 
-nav a {
-  /* margin-left: 5em; */
+.nav a {
+  margin: 2em;
   text-decoration: none;
-  float: right;
   color: white;
-  padding-left: 2em;
 }
 
-.PublicPosts {
-  grid-row: 2/3;
-  grid-column: 1/5;
+@media (max-width: 486px){
+  #header-container {
+    display: flex;
+  }
+  .nav a {
+    margin: 1em;
+    text-decoration: none;
+    color: white;
+  }
 }
+
+#PublicPosts-container {
+  margin-top: 5%;
+  grid-column: 1/5;
+  grid-row: 2/3;
+  background: lightblue;
+}
+
+#footer-container  {
+  grid-column: 1/6;
+  grid-row: 3/4;
+
+  background-color: lightgreen;
+} */

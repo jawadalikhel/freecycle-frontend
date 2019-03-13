@@ -1,22 +1,22 @@
 import React, {Component} from 'react';
 import PublicPosts from './PublicPosts';
-import './home.css';
+import Nav from '../PublicNav';
 
 class LandingPage extends Component{
   render(){
     return(
       <div id="LandingPage">
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/register">Register</a>
-            <a href="/login">Login</a>
-          </nav>
-        </div>
 
-        <div className="PublicPosts">
+        <Nav />
+
+        <div id="PublicPosts-container">
           <PublicPosts />
         </div>
+
+        <footer  id="footer-container">
+          <p>Developed by: Jawad Alikhel</p>
+        </footer>
+
       </div>
     )
   }

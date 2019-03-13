@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Form from './Form';
+import Nav from '../../PublicNav';
 
 class Login extends Component{
   constructor(){
@@ -46,16 +47,8 @@ class Login extends Component{
   render(){
     return(
       <div>
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/">Home</a>
-          </nav>
-        </div>
-
-        <h1>Login</h1>
+        <Nav />
         <Form getUser={this.getUser} handleChange={this.handleChange}/>
-
       </div>
     )
   }

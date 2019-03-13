@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import Display from './Display';
+import Nav from '../../Nav';
+
 
 class Setting extends Component{
   constructor(){
@@ -23,34 +26,25 @@ class Setting extends Component{
 
       console.log(parsedJSON, ' this is the data of profile')
     } catch (err) {
-      console.log(err, 'error in getProfile')
+      console.log(err.message, 'error in getProfile')
     }
   }
 
   componentDidMount(){
     this.getProfile()
-    .then((profile) =>{
-      this.setState({profile: profile})
-      console.log(profile, ' this is the profile')
+    .then((pro) =>{
+      this.setState({profile: pro.data})
+      console.log(pro.data, ' this is the profile')
     }).catch((err) =>{
-      console.log(err, 'error in componentDidMount getProfile')
+      console.log(err.message, 'error in componentDidMount getProfile')
     })
   }
   render(){
-    console.log(this.state, 'THIS IS THE STATE')
+    console.log(this.state.profile, '<--- THIS IS THE STATE')
     return(
       <div>
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/">Logout</a>
-            <a href="/createpost">New Post</a>
-            <a href="#">Settings</a>
-            <a href="/profile">Home</a>
-          </nav>
-        </div>
-
-        <h1>Profile Seetings</h1>
+        <Nav />
+        <Display profile={this.state.profile}/>
       </div>
     )
   }

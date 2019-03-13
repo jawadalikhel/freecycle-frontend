@@ -9,6 +9,7 @@ import userPosts from './Components/User/DisplayPosts';
 import CreatePost from './Components/User/CreatePost';
 import Profile from './Components/User';
 import Setting from './Components/User/Profile/Setting';
+import GlobalPost from './Components/User/PublicPosts';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
 
           <Route  path="/profile" component={Profile} />
           <Route  path="/setting" component={Setting} />
+          <Route  path="/gposts" component={GlobalPost} />
 
 
           <Route  path="/userposts" component={userPosts} />

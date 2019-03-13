@@ -1,0 +1,36 @@
+#form-div {
+  background: ;
+  width: 100%;
+  margin-top: 10em;
+}
+
+#form {
+  background: ;
+
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 2em;
+}
+
+#form input {
+  grid-column: 2/4;
+  padding: 1em;
+  font-size: 1em;
+  width: 50%;
+  margin: auto;
+}
+
+#form .login-btn, #form  .a {
+  grid-column: 2/3;
+  padding: 1em;
+  font-size: 1em;
+  margin: auto;
+  text-decoration: none;
+  margin-left: 12.7em;
+}
+
+#form-div h1 {
+  padding: 1em;
+  font-size: 2em;
+  margin-left: 19.4em;
+}

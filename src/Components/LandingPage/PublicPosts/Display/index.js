@@ -5,20 +5,22 @@ const Display = (props) =>{
   console.log(props.data, 'THESE ARE THE PROPS')
 
   const showData = props.data.map((post) =>{
+    const priceS = props.price;
     return(
-      <div className="card">
-        <div key={post._id} className="inner-card" style={{'padding':'1em'}}>
-          <h3>Title: {post.title}</h3>
-          <img src={post.picture} style={{'width':'40%'}}/>
-          <p>Description: {post.description}</p>
-          <p>Location: {post.location}</p>
-          <p>Created By: {post.createdBy}</p>
-        </div>
+      <div key={post._id}  className="inner-card">
+          {(post.price) ? <p>{post.price}</p> : null}
+          <img src={post.picture} className="postImg"/>
+          <div className="post-info">
+            <h4>{post.title}({post.location})</h4>
+            <p>{post.description}</p>
+            <p>Posted By: {post.createdBy}</p>
+            <p>Date: {post.createdAt}</p>
+          </div>
       </div>
     )
   })
   return(
-    <div id="Posts-container">
+    <div id="flex-container">
       {showData}
     </div>
   )

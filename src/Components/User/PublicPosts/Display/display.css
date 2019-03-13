@@ -1,22 +1,27 @@
-/* #privatePosts-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 1em;
+/* #Posts-container {
+  background: ;
 
-  width: 90%;
-  margin: auto;
-  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-gap: 1em;
 }
 
-.pcard {
-  border: 1px solid black;
+.card {
   margin: auto;
-  height: 100%;
+  height: 85%;
+  width: 100%;
   text-align: center;
-  background: ;
+  overflow: scroll;
+}
+
+.Img {
+  width: 100%;
+  height: 15em;
+  margin: auto;
 } */
 
-#privatePosts-container {
+
+#Posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 1em;
@@ -30,19 +35,10 @@
   background: ;
   border: 1px solid black;
   text-align: center;
-  height: 30em;
-
-  overflow: scroll;
 }
 
 .pImg {
   width: 100%;
   height: 15em;
   margin: auto;
-}
-
-.post-info {
-  background: ;
-  text-align: ;
-  padding: 1em;
 }

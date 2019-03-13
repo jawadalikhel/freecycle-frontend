@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import DisplayPosts from './DisplayPosts';
+import Nav from './Nav';
+import './style.css';
 // import DisplayPublicPosts from '../LandingPage/PublicPosts/Display'
 
 class User extends Component{
@@ -37,20 +39,49 @@ class User extends Component{
       })
     })
   }
+
+  deleteHandler = async(id, e) =>{
+    try {
+      e.preventDefault();
+
+      const deleteResponse = await fetch('http://localhost:9000/api/v1/posts/' + id, {
+        method: 'DELETE'
+      })
+
+      const JsonParsed = await deleteResponse.text();
+      console.log(JsonParsed, ' this is the delete post JsonParsed')
+
+      this.setState({
+        posts: this.state.posts.filter((onePost) => onePost._id !== id)
+      })
+    } catch (err) {
+      console.log(err, 'error in deleteHandler')
+    }
+  }
+
+
   render(){
     console.log(this.state, ' THIS IS THE STATE IN user profile')
     return(
-      <div>
-        <div className="header">
-          <h1 className="header-title">Freecycle</h1>
-          <nav>
-            <a href="/">Logout</a>
-            <a href="/createpost">New Post</a>
-            <a href="/profile">Home</a>
-            <a href="/setting">Setting</a>
-          </nav>
+      <div id="Profile-container">
+
+        <div id="pnav">
+          <Nav />
         </div>
-        <DisplayPosts userPosts={this.state.posts} />
+
+        <div id="in-nav">
+          <a href="/profile">Your Posts</a>
+          <a href="/gposts" >Public Posts</a>
+        </div>
+
+        <div id="privatePosts-container">
+          <DisplayPosts userPosts={this.state.posts} deletePost={this.deleteHandler}/>
+        </div>
+
+        <footer id="footer-c">
+          <p>c2020</p>
+        </footer>
+
       </div>
     )
   }
