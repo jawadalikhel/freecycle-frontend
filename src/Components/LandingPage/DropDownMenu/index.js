@@ -1,37 +1,45 @@
 import React, {Component} from 'react';
 
 class DropDown extends Component{
-  constructor(props){
+  constructor(){
     super();
     this.state = {
-      displayMenu: false,
+      displayMenu: false
     };
+    this.showDropMenu = this.showDropMenu.bind(this);
+    this.hideDeopDownMenu = this.hideDeopDownMenu.bind(this);
 
   }
 
-  showDropDownMenu = (e) =>{
+  showDropMenu = (e) =>{
     e.preventDefault();
-    this.setState({
-      displayMenu: true,
-      () =>{
-        document.addEventListener('click', this.hideDropDownMenu);
-      }
+    this.setState({displayMenu: true}, () =>{
+      document.addEventListener('click', this.hideDeopDownMenu)
     })
+    console.log('clicking')
   }
 
-  hideDropDownMenu = () =>{
-    this.setState({
-      displayMenu: false,
-      () =>{
-        document.removeEventListener('click', this.hideDropDownMenu);
-      }
-    })
+  hideDeopDownMenu = () =>{
+    this.setState({displayMenu: false}, () =>{
+      document.removeEventListener('click', this.hideDeopDownMenu);
+    });
+    console.log('hide menu')
   }
   render(){
-    const{list} = this.props
-    const{listOpen, headerTitle} = this.state;
     return(
-      <div className="dd-wrapper">
+      <div className="dropdown">
+        <div className="button" onClick={this.showDropMenu}>Filter</div>
+
+        {
+          this.state.displayMenu ? (
+            <ul>
+              <li><a href="#">For sale</a></li>
+              <li><a href="#">Wanted</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">Voluntary</a></li>
+            </ul>
+          ) : null
+        }
 
       </div>
     )
