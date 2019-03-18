@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PublicPosts from './PublicPosts';
 import Nav from '../PublicNav';
+import DropDown from './DropDownMenu';
 
 class LandingPage extends Component{
   render(){
@@ -8,6 +9,8 @@ class LandingPage extends Component{
       <div id="LandingPage">
 
         <Nav />
+
+        <DropDown />
 
         <div id="PublicPosts-container">
           <PublicPosts />

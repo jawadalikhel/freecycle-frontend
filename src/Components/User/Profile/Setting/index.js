@@ -44,7 +44,7 @@ class Setting extends Component{
     return(
       <div>
         <Nav />
-        <Display profile={this.state.profile}/>
+        <div style={{'marginTop':'5em'}}><Display profile={this.state.profile}/></div>
       </div>
     )
   }
