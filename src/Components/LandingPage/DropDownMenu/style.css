@@ -1,0 +1,45 @@
+.dropdown {
+  background: ;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: repeat(4, minmax(20px, auto));
+}
+.button {
+  background-color: #5671A9;
+  margin: auto;
+  font-size: 2em;
+  width: 80%;
+  text-align: center;
+  margin-top: 1em;
+  color: white;
+}
+
+/* #5671A9 */
+.menu {
+  /* margin: auto; */
+  grid-column: 1/2;
+
+}
+
+.menu li,a {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 1em;
+  text-align: center;
+}
+
+
+.menu li:hover  {
+  background-color: #5671A9;
+  color: white;
+  width: 80%;
+  text-align: center;
+  /* margin-left: -8%; */
+}
+
+.menu a:hover  {
+  background-color: #5671A9;
+  color: white;
+  width: 100%;
+  /* margin-left: -8%; */
+}

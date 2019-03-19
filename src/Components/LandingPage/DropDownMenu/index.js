@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './style.css';
 
 class DropDown extends Component{
   constructor(){
@@ -32,7 +33,7 @@ class DropDown extends Component{
 
         {
           this.state.displayMenu ? (
-            <ul>
+            <ul className="menu">
               <li><a href="#">For sale</a></li>
               <li><a href="#">Wanted</a></li>
               <li><a href="#">Jobs</a></li>
