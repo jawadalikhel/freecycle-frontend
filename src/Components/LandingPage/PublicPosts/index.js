@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Display from './Display';
+import Jobs from './DisplayJobs';
+
 import './style.css';
 
 class Posts extends Component{
@@ -23,7 +25,7 @@ class Posts extends Component{
 
       const parsedJSON = await postResponse.json();
       // console.log(parsedJSON.data, ' these are all the posts')
-      return parsedJSON;
+      return parsedJSON.data;
     } catch (err) {
       console.log(err, 'error in getPosts')
     }
@@ -33,7 +35,7 @@ class Posts extends Component{
     this.getPosts().then((data) =>{
       console.log(data[19].categorie, 'data.categorie');
         this.setState({
-          posts: data.data,
+          posts: data,
         })
       })
   }
@@ -45,6 +47,8 @@ class Posts extends Component{
     return(
       <div id="display-container">
         <Display data={this.state.posts} />
+        <p>+++++++++++++++++++++++++++++++++++++++++++++++++++</p>
+        <Jobs data={this.state.posts} />
       </div>
     )
   }

@@ -34,7 +34,7 @@ class DropDown extends Component{
         {
           this.state.displayMenu ? (
             <ul className="menu">
-              <li><a href="#">For sale</a></li>
+              <li><a href="/sale">For sale</a></li>
               <li><a href="#">Wanted</a></li>
               <li><a href="#">Jobs</a></li>
               <li><a href="#">Voluntary</a></li>

@@ -11,7 +11,7 @@ import Profile from './Components/User';
 import Setting from './Components/User/Profile/Setting';
 import GlobalPost from './Components/User/PublicPosts';
 
-import Jobs from './Components/LandingPage/Jobs';
+import DisplaySale from './Components/LandingPage/PublicPosts/DisplaySale';
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
           <Route  path="/createpost" component={CreatePost} />
           <Route  path="/publicpost" component={PublicPost} />
 
-          <Route path="/jobs" component={Jobs} />
+          <Route path="/sale" component={DisplaySale} />
         </Switch>
       </div>
     );
