@@ -5,7 +5,7 @@ const Display = (props) =>{
   const showJobs = props.data.map((post) =>{
     return(
       <div key={post._id}>
-        {(post.category === 'jobs') ?
+        {(post.category === 'Volunteer') ?
         <div>
           <img src={post.picture} className="postImg"/>
           <p>{post.title}</p>

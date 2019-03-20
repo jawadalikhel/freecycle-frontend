@@ -1,38 +1,39 @@
 import React, {Component} from 'react';
+import Display from './Display';
 import Nav from '../../PublicNav';
 import DropdownMenu from '../DropDownMenu'
-import Display from './Display';
 
-class Jobs extends Component{
+class Wanted extends Component{
   constructor(){
     super();
     this.state = {
-      jobs: [],
+      want: [],
     }
   }
 
-  getData = async() =>{
+  WantedPosts = async() =>{
     try {
-      const fetchData = await fetch ('http://localhost:9000/api/v1/posts/allPost', {
+      const fetchData = await fetch ('http://localhost:9000/api/v1/posts/allPost',{
         method: 'GET',
         credentials: 'include',
-        header: {
+        headers: {
           'Content-Type': 'application/json'
         }
       })
 
       const parsedJSON = await fetchData.json();
-      console.log(parsedJSON, ' the fetch data')
+      console.log(parsedJSON.data, '<--- Wanted posts parsedJSON')
       return parsedJSON.data;
     } catch (err) {
-      console.log(err, 'error in getData Jobs')
+      console.log(err, 'errror in WantedPosts')
     }
   }
 
   componentDidMount(){
-    this.getData().then((post) =>{
+    this.WantedPosts().then((post) =>{
+      console.log(post, 'Wanted posts')
       this.setState({
-        jobs: post
+        want: post,
       })
     })
   }
@@ -41,10 +42,12 @@ class Jobs extends Component{
       <div>
         <Nav />
         <DropdownMenu />
-        <h1>Jobs</h1>
-        <Display data={this.state.jobs} />
+        
+        <h1>Wanted</h1>
+        <Display data={this.state.want} />
       </div>
     )
   }
 }
-export default Jobs;
+
+export default Wanted;

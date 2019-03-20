@@ -1,17 +1,19 @@
 import React from 'react';
 
 const Display = (props) =>{
-  console.log(props.data, ' the props')
-  const showJobs = props.data.map((post) =>{
+
+  console.log(props.data, ' the data in display ')
+  const showPost = props.data.map((post) =>{
     return(
       <div key={post._id}>
-        {(post.category === 'jobs') ?
+        {(post.category === "community")?
         <div>
-          <img src={post.picture} className="postImg"/>
+          <img src={post.picture} />
           <p>{post.title}</p>
           <p>{post.description}</p>
           <p>{post.location}</p>
-          <p>{post.date}</p>
+          <p>Event Date: {post.Eventdata}</p>
+
         </div>
         : null}
       </div>
@@ -19,7 +21,7 @@ const Display = (props) =>{
   })
   return(
     <div>
-      {showJobs}
+      {showPost}
     </div>
   )
 }

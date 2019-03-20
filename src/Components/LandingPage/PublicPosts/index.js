@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Display from './Display';
-import Jobs from './DisplayJobs';
 
 import './style.css';
 
@@ -47,8 +46,6 @@ class Posts extends Component{
     return(
       <div id="display-container">
         <Display data={this.state.posts} />
-        <p>+++++++++++++++++++++++++++++++++++++++++++++++++++</p>
-        <Jobs data={this.state.posts} />
       </div>
     )
   }

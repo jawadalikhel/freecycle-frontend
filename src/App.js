@@ -11,7 +11,15 @@ import Profile from './Components/User';
 import Setting from './Components/User/Profile/Setting';
 import GlobalPost from './Components/User/PublicPosts';
 
-import DisplaySale from './Components/LandingPage/PublicPosts/DisplaySale';
+import Sale from './Components/LandingPage/Sale';
+import Wanted from './Components/LandingPage/Wanted';
+import Community from './Components/LandingPage/Community';
+import Jobs from './Components/LandingPage/Jobs';
+import Volunteer from './Components/LandingPage/Volunteer';
+
+
+
+
 
 class App extends Component {
   render() {
@@ -31,7 +39,12 @@ class App extends Component {
           <Route  path="/createpost" component={CreatePost} />
           <Route  path="/publicpost" component={PublicPost} />
 
-          <Route path="/sale" component={DisplaySale} />
+          <Route path="/sale" component={Sale} />
+          <Route path="/want" component={Wanted} />
+          <Route path="/community" component={Community} />
+          <Route path="/jobs" component={Jobs} />
+          <Route path="/volunteer" component={Volunteer} />
+
         </Switch>
       </div>
     );

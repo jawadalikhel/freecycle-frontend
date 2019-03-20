@@ -34,10 +34,12 @@ class DropDown extends Component{
         {
           this.state.displayMenu ? (
             <ul className="menu">
+              <li><a href="/">All Posts</a></li>
               <li><a href="/sale">For sale</a></li>
-              <li><a href="#">Wanted</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Voluntary</a></li>
+              <li><a href="/want">Wanted</a></li>
+              <li><a href="/jobs">Jobs</a></li>
+              <li><a href="/community">Community</a></li>
+              <li><a href="/volunteer">Volunteer</a></li>
             </ul>
           ) : null
         }

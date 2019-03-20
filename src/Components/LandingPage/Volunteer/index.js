@@ -3,11 +3,11 @@ import Nav from '../../PublicNav';
 import DropdownMenu from '../DropDownMenu'
 import Display from './Display';
 
-class Jobs extends Component{
+class Volunteer extends Component{
   constructor(){
     super();
     this.state = {
-      jobs: [],
+      volunteer: [],
     }
   }
 
@@ -32,7 +32,7 @@ class Jobs extends Component{
   componentDidMount(){
     this.getData().then((post) =>{
       this.setState({
-        jobs: post
+        volunteer: post
       })
     })
   }
@@ -41,10 +41,10 @@ class Jobs extends Component{
       <div>
         <Nav />
         <DropdownMenu />
-        <h1>Jobs</h1>
-        <Display data={this.state.jobs} />
+        <h1>Volunteer</h1>
+        <Display data={this.state.volunteer} />
       </div>
     )
   }
 }
-export default Jobs;
+export default Volunteer;
