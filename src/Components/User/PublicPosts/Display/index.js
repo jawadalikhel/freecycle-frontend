@@ -1,5 +1,7 @@
 import React from 'react';
 import './display.css';
+import DropDownMenu from '../../../LandingPage/DropDownMenu';
+
 
 const Display = (props) =>{
   console.log(props.data, 'THESE ARE THE PROPS')
@@ -18,6 +20,7 @@ const Display = (props) =>{
   })
   return(
     <div id="Posts-container">
+      <DropDownMenu />
       {showData}
     </div>
   )

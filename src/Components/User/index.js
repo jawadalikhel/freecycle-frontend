@@ -76,7 +76,7 @@ class User extends Component{
 
         <div id="privatePosts-container">
           <DisplayPosts userPosts={this.state.posts} deletePost={this.deleteHandler}/>
-        </div>cd
+        </div>
 
       </div>
     )
