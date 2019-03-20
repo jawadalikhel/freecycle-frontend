@@ -23,7 +23,7 @@ class Posts extends Component{
 
       const parsedJSON = await postResponse.json();
       // console.log(parsedJSON.data, ' these are all the posts')
-      return parsedJSON.data;
+      return parsedJSON;
     } catch (err) {
       console.log(err, 'error in getPosts')
     }
@@ -33,7 +33,7 @@ class Posts extends Component{
     this.getPosts().then((data) =>{
       console.log(data[19].categorie, 'data.categorie');
         this.setState({
-          posts: data,
+          posts: data.data,
         })
       })
   }
