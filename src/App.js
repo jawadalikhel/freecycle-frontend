@@ -18,35 +18,40 @@ import Jobs from './Components/LandingPage/Jobs';
 import Volunteer from './Components/LandingPage/Volunteer';
 
 
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+const store = createStore(() => [], {}, applyMiddleware());
 
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Switch>
-          <Route exact path="/" component={LandingPage} />
-          <Route  path="/login" component={Login} />
-          <Route  path="/register" component={Register} />
+      <Provider store={store}>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={LandingPage} />
+            <Route  path="/login" component={Login} />
+            <Route  path="/register" component={Register} />
 
-          <Route  path="/profile" component={Profile} />
-          <Route  path="/setting" component={Setting} />
-          <Route  path="/gposts" component={GlobalPost} />
+            <Route  path="/profile" component={Profile} />
+            <Route  path="/setting" component={Setting} />
+            <Route  path="/gposts" component={GlobalPost} />
 
 
-          <Route  path="/userposts" component={userPosts} />
-          <Route  path="/createpost" component={CreatePost} />
-          <Route  path="/publicpost" component={PublicPost} />
+            <Route  path="/userposts" component={userPosts} />
+            <Route  path="/createpost" component={CreatePost} />
+            <Route  path="/publicpost" component={PublicPost} />
 
-          <Route path="/sale" component={Sale} />
-          <Route path="/want" component={Wanted} />
-          <Route path="/community" component={Community} />
-          <Route path="/jobs" component={Jobs} />
-          <Route path="/volunteer" component={Volunteer} />
+            <Route path="/sale" component={Sale} />
+            <Route path="/want" component={Wanted} />
+            <Route path="/community" component={Community} />
+            <Route path="/jobs" component={Jobs} />
+            <Route path="/volunteer" component={Volunteer} />
 
-        </Switch>
-      </div>
+          </Switch>
+        </div>
+      </Provider>
     );
   }
 }
