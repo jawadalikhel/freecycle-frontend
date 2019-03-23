@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import './style.css';
 
 class DropDown extends Component{
@@ -34,12 +35,12 @@ class DropDown extends Component{
         {
           this.state.displayMenu ? (
             <ul className="menu">
-              <li><a href="/">All Posts</a></li>
-              <li><a href="/sale">For sale</a></li>
-              <li><a href="/want">Wanted</a></li>
-              <li><a href="/jobs">Jobs</a></li>
-              <li><a href="/community">Community</a></li>
-              <li><a href="/volunteer">Volunteer</a></li>
+              <li><Link to="/">All Posts</Link></li>
+              <li><Link to="/sale">For sale</Link></li>
+              <li><Link to="/want">Wanted</Link></li>
+              <li><Link to="/jobs">Jobs</Link></li>
+              <li><Link to="/community">Community</Link></li>
+              <li><Link to="/volunteer">Volunteer</Link></li>
             </ul>
           ) : null
         }
